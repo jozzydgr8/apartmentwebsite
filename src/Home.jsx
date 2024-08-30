@@ -2,6 +2,7 @@ import React from 'react'
 import MapComponent from './component/MapComponent'
 import Header from './pages/Header'
 import Listings from './pages/Listings'
+import { Amenities } from './pages/Amenities'
 
 function Home() {
   return (
@@ -11,6 +12,7 @@ function Home() {
           
         </div> */}
         <Header/>
+        <Amenities/>
         {/* <Listings/> */}
 
     </div>

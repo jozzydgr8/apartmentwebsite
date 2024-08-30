@@ -12,7 +12,7 @@ export const Amenities = ()=>{
                 </p>
                 <ul>
                     <li>
-                        Unlimited internet FTU applies 2.5TB per year
+                        Unlimited internet FTU applies
                     </li>
                     <li>
                        Free DSTV, Netflix, Amazon subscription
@@ -23,6 +23,8 @@ export const Amenities = ()=>{
                     <li>
                         12,000 watts peak inverter system power supply for each duplex
                     </li>
+                    {
+                        more && <>
                     <li>
                         Purified drinking water system
                     </li>
@@ -32,8 +34,7 @@ export const Amenities = ()=>{
                     <li>
                         Brand new inbuilt microwave, oven, fridge, freezer with water dispenser and glass gas cooker
                     </li>
-                    {
-                        more && <>
+
                     <li>
                         Fully installed cctv system with electric fence
                     </li>

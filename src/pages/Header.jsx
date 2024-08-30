@@ -8,15 +8,13 @@ function Header() {
             <div id='carouselExample' className='carousel slide' data-bs-ride="carousel">
                 <div className='carousel-inner'>
                   <div className='carousel-item active'>
-                    <h1>Slogan lorem Lorem ipsum
-                        dolor sit amet consectetur,
-                          esciunt pariatur dolore.
+                    <h1>
+                      We are comfort and luxury.
                     </h1>
                   </div>
                   <div className='carousel-item'>
                       <h1>
-                        Lorem ipsum
-                         dolor, sit amet consectetur adipisicing.
+                        Where promises meet perfection.
                       </h1>
                   </div>
                 </div>

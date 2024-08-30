@@ -7,6 +7,9 @@
     --primary: hsl(0, 3%, 93%);
     --black: #22092c
 }
+h1{
+    color: var(--black);
+}
 /* //special classes */
 
 section .container-fluid{
@@ -25,6 +28,12 @@ nav .container-fluid{
     padding: 0%;
 }
 
+.sacramento{
+    font-family: 'Sacramento', cursive;
+    font-size: 40px;
+
+}
+
 
 /* //special classes special lasee */
 
@@ -37,6 +46,14 @@ nav{
     text-transform: capitalize;
 }
 
+
+/* //adressr adress */
+.address{
+    background: var(--black);
+    color: var(--primary);
+    text-align: center;
+}
+
 /* //header header-section */
 .header{
     width: 100%;
@@ -45,8 +62,11 @@ nav{
     display: flex;
     align-items: center;
 }
+.header h1{
+    color: var(--primary);
+}
 .header .carousel{
-    padding: 0 2%;
+    padding: 0 3%;
 }
 
 

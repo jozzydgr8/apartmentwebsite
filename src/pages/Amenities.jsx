@@ -1,5 +1,7 @@
+import { useState } from "react"
 
 export const Amenities = ()=>{
+    const[more, setMore] = useState(false)
     return(
         <section>
             <div className="container-fluid">
@@ -10,7 +12,7 @@ export const Amenities = ()=>{
                 </p>
                 <ul>
                     <li>
-                        Unlimited internet FTU applies 2,500gb per year
+                        Unlimited internet FTU applies 2.5TB per year
                     </li>
                     <li>
                        Free DSTV, Netflix, Amazon subscription
@@ -30,6 +32,8 @@ export const Amenities = ()=>{
                     <li>
                         Brand new inbuilt microwave, oven, fridge, freezer with water dispenser and glass gas cooker
                     </li>
+                    {
+                        more && <>
                     <li>
                         Fully installed cctv system with electric fence
                     </li>
@@ -52,10 +56,10 @@ export const Amenities = ()=>{
                         Imported turkish curtains with inners
                     </li>
                     <li>
-                        Brande new bed sheets with pillow cases and duvet
+                        Brand new bed sheets with pillow cases and duvet
                     </li>
                     <li>
-                        in-use lounge and cinema for movies, PS computer games and football matches
+                        In-use lounge and cinema for movies, PS computer games and football matches
                     </li>
                     <li>
                         In-use bar with 32inches tv set
@@ -72,7 +76,11 @@ export const Amenities = ()=>{
                     <li>
                         In-use residence snooker board for games
                     </li>
+                    </>
+                    }
+
                 </ul>
+                <button className="btn" onClick={()=>setMore(!more)}>{more ? 'read less.' : 'read more...' }</button>
 
             </div>
         </section>

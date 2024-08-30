@@ -3,6 +3,7 @@ import React from 'react'
 function Header() {
   return (
     <section className=' background'>
+
       <div className='container-fluid header'>
             <div id='carouselExample' className='carousel slide' data-bs-ride="carousel">
                 <div className='carousel-inner'>
@@ -23,9 +24,9 @@ function Header() {
             </div>
 
 
-      </div>
-      
-      <button className="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+
+
+            <button className="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
             <span className="carousel-control-prev-icon" aria-hidden="true"></span>
             <span className="visually-hidden">Previous</span>
           </button>
@@ -33,6 +34,10 @@ function Header() {
             <span className="carousel-control-next-icon" aria-hidden="true"></span>
             <span className="visually-hidden">Next</span>
       </button>
+
+      </div>
+      
+
     </section>
   )
 }

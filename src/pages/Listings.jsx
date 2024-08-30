@@ -6,7 +6,9 @@ function Listings() {
   return (
     <section>
         <div className='container-fluid'>
-        listings
+        <h1>
+            Our Apartments
+        </h1>
         <div className='row'>
             <div className='col-md-5 list-grid'>
             

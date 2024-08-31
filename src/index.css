@@ -71,21 +71,27 @@ nav{
 
 
 /* //listings listings css */
+.listRow{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 20px;
+
+}
+
 .list-grid{
-    /* border: solid 1px var(--black); */
-    padding: 0;
+    border: solid 1px var(--black);
+    margin: 0;
     height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    padding: 0;
+    border-radius: 10px 10px 0px 0px;
+    color: var(--black);
     
 }
-.row{
-    justify-content: center;
-}
-.gap{
-    margin-left: 12px;
-}
+
 .gridProduct{
     overflow: hidden;
     width: 100%;
@@ -126,13 +132,13 @@ nav{
 .list-footer{
     display: flex;
     justify-content: space-between;
-    background: var(--primary);
-    
+    background: var(--black); 
+    /* padding: 2%; */
 }
 .list-footer div{
-    border-right: solid 1px var(--black);
-    color: var(--black);
-    padding-right:  2%;
+    border-right: solid 1px var(--primary);
+    color: var(--primary);
+    padding:  2% 3%;
     text-align: center;
     
 }

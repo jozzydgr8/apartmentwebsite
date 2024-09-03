@@ -12,6 +12,8 @@ import { initializeApp } from "firebase/app";
 import { useEffect } from 'react';
 import { UseContextData } from './ContextFolder/Context/UseContextData';
 import AdminUpload from './Admin/AdminUpload';
+import { UseContextAuth } from './ContextFolder/Context/UseContextAuth';
+import { Register } from './User/Register';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -36,17 +38,54 @@ export const userRef = collection(db, 'user')
 export const storage = getStorage(app);
 export const bookRef = collection(db, 'book')
 
-const router = createBrowserRouter(createRoutesFromElements(
-  <>
-  <Route path='apartmentwebsite' element={<Layout/>}>
-    <Route index element={<Home/>} />
-    <Route path='upload' element={<AdminUpload/>}/>
-  </Route>
-  </>
-))
+
 function App() {
-  const {dispatch, loading:load} = UseContextData();;
+  const {user, loading, dispatch:dis} = UseContextAuth();;
+
+  const {dispatch, loading:load} = UseContextData();
+
+  const router = createBrowserRouter(createRoutesFromElements(
+    <>
+    <Route path='apartmentwebsite' element={<Layout/>}>
+      <Route index element={<Home/>} />
+      <Route path='register' element={<Register/>} />
+      <Route path='upload' element={<AdminUpload/>}/>
+    </Route>
+    </>
+  ))
   
+//auth check
+  useEffect(()=>{
+    dis({type:'loading', payload:true})
+    const order = async ()=>{
+      try{
+        const unsubscribe = onAuthStateChanged(auth, user=>{
+          if(user){
+            const user = auth.currentUser;
+            dis({type:'signUser', payload:user});
+            console.log('signed in')
+          }else{
+            dis({type:'signUser', payload:null});
+            console.log('logged out')
+          }
+
+        })
+      }catch(error){
+        console.error(error)
+      }
+    }
+
+    order();
+
+  
+        
+    
+    return ()=>{
+      order();
+    }
+  },[]);
+
+
   //data
   useEffect(()=>{
     dispatch({type:'loading', payload:true});

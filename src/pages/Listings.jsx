@@ -1,8 +1,11 @@
 import React from 'react'
 import image from '../assets/nightbg.jpeg'
+import {UseContextData} from '../ContextFolder/Context/UseContextData'
+import ListingTemp from '../component/ListingTemp';
 
 function Listings() {
-     
+     const {data} = UseContextData();
+     console.log('data:', data)
   return (
     <section>
         <div className='container-fluid'>
@@ -10,126 +13,17 @@ function Listings() {
         <h1 >
             Our Apartments
         </h1>
+
         <div className='listRow'>
-            <div className='list-grid'>
             
-                    <h3 style={{padding:'0 2%'}}>3 bedroom duplex</h3>
-                    <div className='gridProduct row'>
+                {
+                    data && data.map((data)=>(
 
-                        <div className='list-image col-md-6'>
-                            <img src={image} alt='apartment'/>
-                        </div>
-
-                        <div className='col-md-6 listing-details'>
-                            <h3>
-                                #3,500,000
-                            </h3>
-                        </div>
-
-                    </div>
-
-
-                
-                <div className='list-footer'>
-                    <div>bedroom</div>
-                    <div>bathrooms</div>
-                    <div>toilets</div>
-                </div>
-            </div>
-
-
-
-
-
-
-            <div className='list-grid'>
+                        <ListingTemp key={data.id} data={data}/>
+                    ))
+                }
             
-                    <h3 style={{padding:'0 2%'}}>2 bedroom duplex apartment</h3>
-                    <div className='gridProduct row'>
-
-                        <div className='list-image col-md-6'>
-                            <img src={image} alt='apartment'/>
-                        </div>
-                        
-                        <div className='col-md-6 listing-details'>
-                            <h3>
-                                #2,500,000
-                            </h3>
-                        </div>
-
-                    </div>
-
-
-                
-                <div className='list-footer'>
-                    <div>bedroom</div>
-                    <div>bathrooms</div>
-                    <div>toilets</div>
-                </div>
-            </div>
-
-
-
-
-
-
-            <div className='list-grid'>
             
-            <h3 style={{padding:'0 2%'}}>2 bedroom duplex apartment</h3>
-            <div className='gridProduct row'>
-
-                <div className='list-image col-md-6'>
-                    <img src={image} alt='apartment'/>
-                </div>
-                
-                <div className='col-md-6 listing-details'>
-                    <h3>
-                        #2,500,000
-                    </h3>
-                </div>
-
-            </div>
-
-
-        
-        <div className='list-footer'>
-            <div>bedroom</div>
-            <div>bathrooms</div>
-            <div>toilets</div>
-        </div>
-    </div>
-
-
-
-
-
-
-
-    <div className='list-grid'>
-            
-            <h3 style={{padding:'0 2%'}}>2 bedroom duplex apartment</h3>
-            <div className='gridProduct row'>
-
-                <div className='list-image col-md-6'>
-                    <img src={image} alt='apartment'/>
-                </div>
-                
-                <div className='col-md-6 listing-details'>
-                    <h3>
-                        #2,500,000
-                    </h3>
-                </div>
-
-            </div>
-
-
-        
-        <div className='list-footer'>
-            <div>bedroom</div>
-            <div>bathrooms</div>
-            <div>toilets</div>
-        </div>
-    </div>
         </div>
         </div>
     </section>

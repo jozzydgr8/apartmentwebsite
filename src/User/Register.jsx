@@ -85,13 +85,21 @@ const handleSignUp= (e)=>{
   
 }
     return (
-        <section className="background">
-            <div className="container-fluid">
-                <form onSubmit={registered ? handleSignIn :  handleSignUp}>
+        <section className="background ">
+            <div className="registerSection container-fluid">
+                <div>
+
+                <form className="registerForm" onSubmit={registered ? handleSignIn :  handleSignUp}>
+                <h2 className="monserrat">Welcome!</h2>
+                <p>sign in to book the best apartment just for you</p>
                     {
                         registered ?
                         <>
+                            <div>
+                                <label for='email'>email</label>
+                            </div>
                             <input 
+                                className="registerInput"
                                 type="email"
                                 name="email"
                                 autoComplete="new-email"
@@ -99,25 +107,38 @@ const handleSignUp= (e)=>{
                                 value={email} 
                                 onChange={(e) => setEmail(e.target.value)} 
                             />
+                            <div>
+                                <label for='password'>password</label>
+                            </div>
                             <Input.Password 
+                                className="registerInput"
                                 name="password"
                                 autoComplete="new-password"
                                 placeholder="Type password" 
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)} 
                             />
+                            <div style={{textAlign:'right'}}>forgot password?</div>
                         </>
                         :
                         <>
+                            <div>
+                                <label for='first-name'>First name</label>
+                            </div>
                             <input 
+                                className="registerInput"
                                 type="text"
                                 name="first-name"
                                 autoComplete="given-name"
                                 placeholder="First name" 
                                 value={fname}
                                 onChange={(e) => setFname(e.target.value)} 
-                            />
+                            />                            
+                        <div>
+                            <label for='last-name'>Last name</label>
+                        </div>
                             <input 
+                                className="registerInput"
                                 type="text"
                                 name="last-name"
                                 autoComplete="family-name"
@@ -125,7 +146,11 @@ const handleSignUp= (e)=>{
                                 value={lname}
                                 onChange={(e) => setLname(e.target.value)} 
                             />
+                            <div>
+                                <label for='email'>email</label>
+                            </div>
                             <input 
+                                className="registerInput"
                                 type="email"
                                 name="email"
                                 autoComplete="new-email"
@@ -133,7 +158,11 @@ const handleSignUp= (e)=>{
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)} 
                             />
+                            <div>
+                                <label for='password'>password</label>
+                            </div>
                             <Input.Password 
+                                className="registerInput"
                                 name="password"
                                 autoComplete="new-password"
                                 placeholder="Type password" 
@@ -154,6 +183,8 @@ const handleSignUp= (e)=>{
                         </span>
                     </div>
                 </form>
+                </div>
+
                 {errorMessage != ''&&<div>{errorMessage}</div>}
             </div>
         </section>

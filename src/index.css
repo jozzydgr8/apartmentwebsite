@@ -23,7 +23,7 @@ nav .container-fluid{
     background-size: contain;
     background-position: center;
     color: var(--primary);
-    height: 90vh;
+    min-height: 54.8vh;
     width: 100%;
     padding: 0%;
 }
@@ -141,4 +141,43 @@ nav{
     padding:  2% 3%;
     text-align: center;
     
+}
+
+/* register regeistration sign up */
+.registerSection{
+    
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, .7);
+        z-index: 1000;
+      
+}
+.registerForm{
+    position: fixed;
+    /* max-height: 60vh; */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* background-color: #fff; */
+    padding: 50px;
+    z-index: 1000;
+    overflow: auto;
+    width: 80%;
+    border-radius: 10px;
+}
+
+input, form button{
+    width: 100%;
+    padding: 7px 5px;
+    border-radius: 5px;
+    margin: 5px 0 15px 0px ;
+    
+}
+form button{
+    background: var(--black);
+    color: white;
+    margin-top: 30px;
 }

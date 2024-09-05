@@ -1,4 +1,4 @@
-import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, createRoutesFromElements, Navigate, Route, RouterProvider } from 'react-router-dom';
 import Layout from './Layout';
 import Home from './Home';
 import {getFirestore, collection, onSnapshot, query, where} from "firebase/firestore"
@@ -14,6 +14,7 @@ import { UseContextData } from './ContextFolder/Context/UseContextData';
 import AdminUpload from './Admin/AdminUpload';
 import { UseContextAuth } from './ContextFolder/Context/UseContextAuth';
 import { Register } from './User/Register';
+import ListingTemp from './ID/ListingTemp';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -44,15 +45,7 @@ function App() {
 
   const {dispatch, loading:load} = UseContextData();
 
-  const router = createBrowserRouter(createRoutesFromElements(
-    <>
-    <Route path='apartmentwebsite' element={<Layout/>}>
-      <Route index element={<Home/>} />
-      <Route path='register' element={<Register/>} />
-      <Route path='upload' element={<AdminUpload/>}/>
-    </Route>
-    </>
-  ))
+
   
 //auth check
   useEffect(()=>{
@@ -103,6 +96,24 @@ function App() {
       return ()=> unSubscribe();
       
     },[]);
+
+    //routes 
+    if(loading || load){
+      return(<>
+      ...loading
+      </>)
+    }
+
+    const router = createBrowserRouter(createRoutesFromElements(
+      <>
+      <Route path='apartmentwebsite' element={<Layout/>}>
+        <Route index element={<Home/>} />
+        <Route path='register' element={!user ? <Register/>:<Navigate to={'/apartmentwebsite'}/>} />
+        <Route path='upload' element={user && user.uid === process.env.REACT_APP_superAdmin ? <AdminUpload/>: <Navigate to={'/apartmentwebsite'}/>}/>
+        <Route path=':id' element={<ListingTemp/>} />
+      </Route>
+      </>
+    ))
   return (
     <div className="App">
       <RouterProvider router={router} />

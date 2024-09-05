@@ -65,8 +65,11 @@ function AdminUpload() {
       }
     }
   return (
-    <div>
+    <section className='background'>
+    <div className='container-fluid'>
+      <div>
       <form onSubmit={handleSubmit}>
+        <h2 className='monserrat'>welcome! upload aparments</h2>
         <input onChange={(e)=>setApartment(e.target.value)}
         value={apartment}
          placeholder='apartment qualities/Title' />
@@ -118,7 +121,10 @@ function AdminUpload() {
 
         <button type='submit'>submit</button>
       </form>
+      </div>
+
     </div>
+    </section>
   )
 }
 

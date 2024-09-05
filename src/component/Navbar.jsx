@@ -44,6 +44,11 @@ function Navbar({onOpen}) {
         <li className="nav-item">
           <Link className="nav-link" to="bookings">view bookings</Link>
         </li>
+        {
+          user.uid === process.env.REACT_APP_superAdmin && <li>
+            <Link className='nav-link' to={'upload'}>upload</Link>
+          </li>
+        }
         <li className='nav-item'>
           <span onClick={handleLogOut} className='nav-link' href='#'>log out</span>
         </li>

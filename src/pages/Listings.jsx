@@ -1,5 +1,4 @@
 import React from 'react'
-import image from '../assets/nightbg.jpeg'
 import {UseContextData} from '../ContextFolder/Context/UseContextData'
 import ListingTemp from '../component/ListingTemp';
 

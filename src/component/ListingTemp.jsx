@@ -14,17 +14,19 @@ data.fileUrls && data.fileUrls.map((img)=>(
     
   return (
     <div className='list-grid'>
-        <h3 style={{padding:'0 2%'}}>{data.apartment}</h3>
-        <div className='gridProduct row'>
+        
+        <div className='gridProduct '>
 
-        <div className='list-image col-md-6'>
+        <div className='list-image '>
             {
                 !url ? <span>no image for file</span> : <DisplayImage url={url}/>
             }
 
         </div>
+        
 
-        <div className='col-md-6 listing-details'>
+        <div className='listing-details'>
+        <h3>{data.apartment}</h3>
             <h3>
                 {data.daily}
             </h3>

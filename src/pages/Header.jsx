@@ -5,33 +5,15 @@ function Header() {
     <section className=' background'>
 
       <div className='container-fluid header'>
-            <div id='carouselExample' className='carousel slide' data-bs-ride="carousel">
-                <div className='carousel-inner'>
-                  <div className='carousel-item active'>
-                    <h1>
-                      We are comfort and luxury.
-                    </h1>
-                  </div>
-                  <div className='carousel-item'>
-                      <h1>
-                        Where promises meet perfection.
-                      </h1>
-                  </div>
-                </div>
 
-            </div>
-
-
-
-
-            <button className="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span className="visually-hidden">Previous</span>
-          </button>
-          <button className="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-            <span className="carousel-control-next-icon" aria-hidden="true"></span>
-            <span className="visually-hidden">Next</span>
-      </button>
+          <div className='headerSub'>
+            <h1>
+              your home away from home
+            </h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, perspiciatis.
+            </p>
+          </div>
 
       </div>
       

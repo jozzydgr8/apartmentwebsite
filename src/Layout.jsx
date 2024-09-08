@@ -10,7 +10,7 @@ export default function Layout() {
   return (
     <>
     <Navbar onOpen={()=>{setOpen(true)}}/>
-      <Address/>
+      {/* <Address/> */}
     <Outlet/>
     <div>
       <Modal open={open} componentRef={componentRef} onClose={()=>{setOpen(false)}}/>

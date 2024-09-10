@@ -7,10 +7,10 @@ function Header() {
       <div className='container-fluid header'>
 
           <div className='headerSub'>
-            <h1>
+            <h3>
               your home away from home
-            </h1>
-            <p>
+            </h3>
+            <p className='subHead'>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, perspiciatis.
             </p>
           </div>

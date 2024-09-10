@@ -4,6 +4,7 @@ import { useState } from "react"
 import { auth, userRef } from "../App";
 import { UseContextAuth } from "../ContextFolder/Context/UseContextAuth";
 import { addDoc } from "firebase/firestore";
+import { Navigate } from "react-router-dom";
 export const Register = () => {
     const [registered, setRegistered] = useState(true);
     const [email, setEmail] = useState('');
@@ -90,7 +91,15 @@ const handleSignUp= (e)=>{
                 <div>
 
                 <form className="registerForm" onSubmit={registered ? handleSignIn :  handleSignUp}>
+                <div style={{display:'flex', justifyContent:'space-between'}}>
                 <h2 className="monserrat">Welcome!</h2>
+                <ion-icon style={{fontSize:'30px',
+                                border:'solid white 1px',
+                                cursor:'pointer',
+                                padding:'3px',
+                                borderRadius:'5px'}}
+                                name="close-outline" onClick={()=>window.location.href='/apartmentwebsite'}></ion-icon>
+                </div>
                 <p>sign in to book the best apartment just for you</p>
                     {
                         registered ?

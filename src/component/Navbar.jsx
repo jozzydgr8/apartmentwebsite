@@ -55,9 +55,9 @@ function Navbar({onOpen}) {
          </> 
         }
 
-        {/* <li>
-          <span onClick={onOpen}>open</span>
-        </li> */}
+        <li className='nav-item'>
+          <Link className='nav-link' to={'/'}>visit our bakery</Link>
+        </li>
       </ul>
     </div>
   </div>

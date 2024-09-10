@@ -6,10 +6,29 @@
 :root{
     --primary: hsl(0, 3%, 93%);
     --black: #FF5900;
+    
 
 }
+/* Frame 3 */
+
+a{
+    text-decoration: none;
+}
+button{
+    background: transparent;
+    border: solid 1px var(--black);
+    color: var(--black);
+    padding: 5px;
+    border-radius: 3px;
+    margin: 4px 0;
+}
+
 h1{
     color: var(--black);
+    /* font-size: 30px; */
+}
+.subHead{
+    /* font-size: 1.5vw; */
 }
 /* //special classes */
 
@@ -27,6 +46,11 @@ nav .container-fluid{
     height: 80vh;
     width: 100%;
     padding: 0%;
+}
+@media (max-width:767px) {
+    .background{
+        height: 40vh;
+    }
 }
 
 .sacramento{
@@ -61,8 +85,7 @@ nav{
 
 /* //header header-section */
 .headerSub{
-    width: 80%;
-    height: 70%;
+    width: 90%;
     backdrop-filter: blur(5px);
     display: flex;
     flex-direction: column;
@@ -70,14 +93,28 @@ nav{
     justify-content: center;
     background: rgb(0, 0, 0, 0.5);
     border-radius: 20px;
-    padding: 50px;
+    padding: 20px;
 }
+@media (max-width:767px) {
+    .headerSub{
+        width: 90%;
+    }
+    h3{
+        font-size: 3vw;
+        font-weight: bold;
+    }
+    .subHead{
+        font-size: 2.7vw;
+    }
+}
+
 .header{
     width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 .header h1{
     color: var(--primary);
@@ -97,7 +134,7 @@ nav{
 .list-grid{
     border: solid 1px var(--black);
     margin: 0;
-    height: 400px;
+    height: 500px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -115,7 +152,7 @@ nav{
     margin:0
 }
 .listing-details {
-    height: 40%;
+    height: 45%;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -126,7 +163,7 @@ nav{
 }
 .list-image{
     overflow: hidden; 
-    height: 60%;
+    height: 55%;
     width: 100%;
     border-radius: 10px 10px 0px 0px;
    
@@ -138,6 +175,7 @@ nav{
     .listing-details{
         height: 30%;
     }
+
 }
 
 .list-grid img{
@@ -174,19 +212,29 @@ nav{
 }
 .registerForm{
     position: fixed;
-    /* max-height: 60vh; */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /* background-color: #fff; */
-    padding: 50px;
+
+    padding: 5% 8%;
     z-index: 1000;
     overflow: auto;
     width: 80%;
     border-radius: 10px;
 }
+.registerForm input{
+    width: 100%;
+    padding: 3px;
+    border-radius:4px;
+}
+@media (max-width:767px) {
+    .registerForm{
+        width: 100%;
+        /* padding: 10px; */
+    }
+}
 
-input, form button{
+ form button{
     width: 100%;
     padding: 7px 5px;
     border-radius: 5px;
@@ -198,3 +246,48 @@ form button{
     color: white;
     margin-top: 30px;
 }
+
+.availSectiondiv{
+    background: var(--primary);
+    width: 70%;
+    position: relative;
+    z-index: 10;
+    margin: 0 auto;
+    border-radius: 20px;
+
+    
+    
+}
+.availSectiondiv form{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.availSection{
+    margin-top: -5%;
+}
+
+
+/* //footer footer */
+#footer {
+    background: rgb(41, 41, 41);
+    color: var(--primary);
+    /* color: black; */
+  }
+  
+  #footer input {
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    padding: 7px 10px;
+    margin: 2px 0;
+  }
+  
+  .footerFlex{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+  }
+
+

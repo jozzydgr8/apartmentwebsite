@@ -5,6 +5,8 @@ export const Amenities = ()=>{
     return(
         <section>
             <div className="container-fluid">
+                <h4 style={{textAlign:'center'}} className="subHead"> Welcome to Mag’s Resident, No.1 for short let apartment and home rentals in Lagos,
+                our luxurious apartments are suitable for you and your Family</h4>
                 <h1>Amenities</h1>
                 <p>when you stay with us you are entitled
                    to valuable facilities and amenities

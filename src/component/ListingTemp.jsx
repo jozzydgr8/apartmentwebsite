@@ -11,6 +11,7 @@ data.fileUrls && data.fileUrls.map((img)=>(
 ))[0]
 
 
+    // !data.available ? <span> booked </span> : <span>Available</span>
     
   return (
     <div className='list-grid'>
@@ -26,10 +27,13 @@ data.fileUrls && data.fileUrls.map((img)=>(
         
 
         <div className='listing-details'>
-        <h3>{data.apartment}</h3>
+        <h3>{data.apartment.slice(0,13)}...</h3>
+        <div>Apartment type: {data.apartment}</div>
             <h3>
-                {data.daily}
+            ₦{data.daily}
             </h3>
+            
+            <button>available</button>
         </div>
 
         </div>

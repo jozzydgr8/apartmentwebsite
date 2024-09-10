@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/apartmentwebsite/static/css/main.8fec4ab9.css",
-    "main.js": "/apartmentwebsite/static/js/main.b654ba16.js",
+    "main.css": "/apartmentwebsite/static/css/main.9a28bbb0.css",
+    "main.js": "/apartmentwebsite/static/js/main.51ac2863.js",
     "static/js/879.971f4d86.chunk.js": "/apartmentwebsite/static/js/879.971f4d86.chunk.js",
     "static/js/453.bb496203.chunk.js": "/apartmentwebsite/static/js/453.bb496203.chunk.js",
     "static/media/WhatsApp Image 2024-09-08 at 07.37.12.jpeg": "/apartmentwebsite/static/media/WhatsApp Image 2024-09-08 at 07.37.12.5abf8f9a57efebb62127.jpeg",
     "index.html": "/apartmentwebsite/index.html",
-    "main.8fec4ab9.css.map": "/apartmentwebsite/static/css/main.8fec4ab9.css.map",
-    "main.b654ba16.js.map": "/apartmentwebsite/static/js/main.b654ba16.js.map",
+    "main.9a28bbb0.css.map": "/apartmentwebsite/static/css/main.9a28bbb0.css.map",
+    "main.51ac2863.js.map": "/apartmentwebsite/static/js/main.51ac2863.js.map",
     "879.971f4d86.chunk.js.map": "/apartmentwebsite/static/js/879.971f4d86.chunk.js.map",
     "453.bb496203.chunk.js.map": "/apartmentwebsite/static/js/453.bb496203.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8fec4ab9.css",
-    "static/js/main.b654ba16.js"
+    "static/css/main.9a28bbb0.css",
+    "static/js/main.51ac2863.js"
   ]
 }

@@ -81,17 +81,7 @@ console.log(urlPath)
         <div>{data.toilet} toilets</div>
         </div>
     </div>
-    {
-        length === 1 && 
-        <div>
-            <div>
-                <h1>{data.apartment} is available for booking</h1>
-                <div><button>book now</button></div>
-                {user && user.uid === process.env.REACT_APP_superAdmin && <div> <button onClick={()=>handleDelete(urlPath, data.id)}>delete this apartment</button> 
-                <button>make unavailable</button></div>}
-            </div>
-        </div>
-    }
+
     </>
   )
 }

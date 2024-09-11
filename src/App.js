@@ -80,22 +80,27 @@ function App() {
 
 
   //data
-  useEffect(()=>{
-    dispatch({type:'loading', payload:true});
-     
-    const unSubscribe = onSnapshot(colRef, (snapshot)=>{
-        const data = []
-        const dataRef = snapshot.docs.forEach(doc=>{
-          data.push({...doc.data(), id:doc.id});
-          dispatch({type:'getData', payload:data});
-          console.log(data);
-        });
-      });
-    
-      
-      return ()=> unSubscribe();
-      
-    },[]);
+  useEffect(() => {
+    dispatch({ type: 'loading', payload: true });
+  
+    const unSubscribe = onSnapshot(colRef, (snapshot) => {
+      // Create an array of documents with their data and ID
+      const data = snapshot.docs.map(doc => ({ ...doc.data(), id: doc.id }));
+  
+      // Dispatch data after gathering all documents
+      dispatch({ type: 'getData', payload: data });
+      console.log(data);
+  
+      // Turn off loading state after data is loaded
+      dispatch({ type: 'loading', payload: false });
+    }, (error) => {
+      console.error("Error fetching data:", error);
+      dispatch({ type: 'loading', payload: false });
+    });
+  
+    // Cleanup function to unsubscribe from the snapshot listener
+    return () => unSubscribe();
+  }, []);
 
     //routes 
     if(loading || load){

@@ -2,7 +2,8 @@ import React from 'react'
 
 function DisplayImage({url, length}) {
   console.log(url)
-  if (length != 1){
+  console.log(length)
+  if (length != 1 && length != undefined){
     return (
       <>
         <img src={url} alt='apartmentimg'/>

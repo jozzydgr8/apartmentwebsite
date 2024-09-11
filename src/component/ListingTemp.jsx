@@ -9,7 +9,6 @@ function ListingTemp({data,length}) {
 if(!data){
     return
 }
-const {user} = UseContextAuth();
 
 
 const url =
@@ -25,25 +24,6 @@ console.log(urlPath)
     // !data.available ? <span> booked </span> : <span>Available</span>
     
 
-    //handle delete
-    const handleDelete = async (imagePaths, id) => {
-        try {
-            // First, delete each image from storage
-            for (const imagePath of imagePaths) {
-                const fileStorage = ref(storage, imagePath);
-                await deleteObject(fileStorage);
-            }
-    
-            // Then, delete the document from Firestore
-            const docRef = doc(colRef, id);
-            await deleteDoc(docRef);
-    
-            // Redirect after deletion
-            window.location.href = '/apartmentwebsite';  // Or use navigate('/apartmentwebsite') if using React Router
-        } catch (error) {
-            console.error("Error deleting:", error);
-        }
-    };
     
     
   return (

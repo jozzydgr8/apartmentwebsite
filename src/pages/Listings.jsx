@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 
 function Listings() {
      const {data} = UseContextData();
-     console.log('data:', data)
   return (
     <section>
         <div className='container-fluid'>
@@ -20,9 +19,9 @@ function Listings() {
         <div className='listRow'>
             
                 {
-                    data && data.map((data)=>(
-                        <Link key={data.id} to={data.id}>
-                            <ListingTemp  data={data}/>
+                    data && data.map((items)=>(
+                        <Link key={items.id} to={items.id}>
+                            <ListingTemp  data={items} length={data.length}/>
                         </Link>
                         
                     ))

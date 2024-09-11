@@ -123,6 +123,9 @@ nav{
 
 
 /* //listings listings css */
+#list{
+    min-height: 70vh;
+}
 .listRow{
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(300px, 1fr));
@@ -169,11 +172,14 @@ nav{
    
 }
 @media (max-width:767px) {
-    .list-image{
+    /* .list-image{
         height: 70%;
     }
     .listing-details{
         height: 30%;
+    } */
+    .list-grid{
+        height: 300px;
     }
 
 }
@@ -222,7 +228,8 @@ nav{
     width: 80%;
     border-radius: 10px;
 }
-.registerForm input{
+
+.registerForm input, #upload input{
     width: 100%;
     padding: 3px;
     border-radius:4px;
@@ -289,5 +296,12 @@ form button{
     gap: 10px;
     cursor: pointer;
   }
+@media (max-width:767px) {
+    
+}
+#upload input{
 
+    margin: 2px 0;
+
+}
 

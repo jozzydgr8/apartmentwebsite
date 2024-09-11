@@ -65,43 +65,43 @@ function AdminUpload() {
       }
     }
   return (
-    <section className='background'>
+    <section id='upload'>
     <div className='container-fluid'>
       <div>
       <form onSubmit={handleSubmit}>
         <h2 className='monserrat'>welcome! upload aparments</h2>
-        <input onChange={(e)=>setApartment(e.target.value)}
+        <br/><input onChange={(e)=>setApartment(e.target.value)}
         value={apartment}
          placeholder='apartment qualities/Title' />
-        <input 
+        <br/><input 
         value={bedroom}
         onChange={(e)=>setBedroom(e.target.value)}
         placeholder='bedroom amount' />
-        <input
+        <br/><input
         value={bathroom}
         onChange={(e)=>setBathroom(e.target.value)}
         placeholder='bathroom amount' />
-        <input
+        <br/><input
         value={toilet}
         onChange={(e)=>setToilet(e.target.value)}
         placeholder='toilet amount' />
-        <input 
+        <br/><input 
         value={park}
         onChange={(e)=>setPark(e.target.value)}
         placeholder='parking spaces' />
-        <input 
+        <br/><input 
         value={daily}
         onChange={(e)=>setDaily(e.target.value)}
         placeholder='price per day' />
-        <input
+        <br/><input
          value={weekly}
          onChange={(e)=>setWeekly(e.target.value)}
          placeholder='price per week' />
-        <input 
+        <br/><input 
         value={monthly}
         onChange={(e)=>setMonthly(e.target.value)}
         placeholder='price per month' />
-        <input 
+        <br/><input 
         value={annum}
         onChange={(e)=>setAnnum(e.target.value)}
         placeholder='price per annum' />

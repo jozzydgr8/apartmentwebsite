@@ -8,7 +8,6 @@ function ListingTemp() {
    const [temp, setTemp] = useState(null)
     const{id} = useParams();
     const {data} = UseContextData();
-    console.log(id)
     useEffect(()=>{
         const template = data && data.filter(item => {
             return item.id === id
@@ -22,13 +21,13 @@ function ListingTemp() {
     if(!temp){
         return <span>cant find file</span>
     }
-    console.log('temp',temp)
+   // console.log('temp',temp)
   return (
-    <section>
+    <section id='list'>
         <div className='container-fluid'>
         {
             temp.map((item)=>(
-                <List data={item}/>
+                <List data={item} key={item.id} length={temp.length}/>
             ))
         }
            

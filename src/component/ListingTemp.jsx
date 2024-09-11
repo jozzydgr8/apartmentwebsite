@@ -10,7 +10,7 @@ if(!data){
     return
 }
 const {user} = UseContextAuth();
-const {uid} = user
+
 
 const url =
 data.fileUrls && data.fileUrls.map((img)=>(
@@ -87,7 +87,7 @@ console.log(urlPath)
             <div>
                 <h1>{data.apartment} is available for booking</h1>
                 <div><button>book now</button></div>
-                {uid === process.env.REACT_APP_superAdmin && <div> <button onClick={()=>handleDelete(urlPath, data.id)}>delete this apartment</button> 
+                {user && user.uid === process.env.REACT_APP_superAdmin && <div> <button onClick={()=>handleDelete(urlPath, data.id)}>delete this apartment</button> 
                 <button>make unavailable</button></div>}
             </div>
         </div>

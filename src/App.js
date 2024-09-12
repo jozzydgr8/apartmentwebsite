@@ -15,6 +15,7 @@ import AdminUpload from './Admin/AdminUpload';
 import { UseContextAuth } from './ContextFolder/Context/UseContextAuth';
 import { Register } from './User/Register';
 import ListingTemp from './ID/ListingTemp';
+import { Loading } from './component/Loading';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -105,7 +106,7 @@ function App() {
     //routes 
     if(loading || load){
       return(<>
-      ...loading
+      <Loading/>
       </>)
     }
 

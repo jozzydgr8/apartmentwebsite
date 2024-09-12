@@ -4,7 +4,8 @@ import { useState } from "react"
 import { auth, userRef } from "../App";
 import { UseContextAuth } from "../ContextFolder/Context/UseContextAuth";
 import { addDoc } from "firebase/firestore";
-import { Navigate } from "react-router-dom";
+import { Loading } from "../component/Loading";
+
 export const Register = () => {
     const [registered, setRegistered] = useState(true);
     const [email, setEmail] = useState('');
@@ -85,9 +86,14 @@ const handleSignUp= (e)=>{
           });
   
 }
+if(disable){
+    return(
+        <Loading/>
+    )
+}
     return (
-        <section className="background ">
-            <div className="registerSection container-fluid">
+        <section>
+            <div className="container-fluid">
                 <div>
 
                 <form className="registerForm" onSubmit={registered ? handleSignIn :  handleSignUp}>

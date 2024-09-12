@@ -6,11 +6,11 @@ function Header() {
 
       <div className='container-fluid header'>
 
-          <div className='headerSub'>
-            <h3>
+          <div>
+            <h3 className='heading'>
               your home away from home
             </h3>
-            <p className='subHead'>
+            <p className='subHeading'>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, perspiciatis.
             </p>
           </div>

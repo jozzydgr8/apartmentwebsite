@@ -6,7 +6,7 @@ function DisplayImage({url, length}) {
   if (length != 1 && length != undefined){
     return (
       <>
-        <img src={url} alt='apartmentimg'/>
+        <img src={url} alt='apartmentimg' className='carImage'/>
       </>
     )
     

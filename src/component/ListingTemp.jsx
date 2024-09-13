@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react'
 import DisplayImage from './DisplayImage'
 
 
@@ -12,9 +11,7 @@ const url =
 data.fileUrls && data.fileUrls.map((img)=>(
     img.url
 ))
-const urlPath = data.fileUrls && data.fileUrls.map((img)=>(
-    img.imagePath
-))
+
 
 
 
@@ -55,9 +52,15 @@ const urlPath = data.fileUrls && data.fileUrls.map((img)=>(
 
 
         <div className={data.available === true ? 'list-footer': 'unavailablefooter'}>
-        <div>{data.bedroom} bedroom</div>
-        <div>{data.bathroom} bathrooms</div>
-        <div>{data.toilet} toilets</div>
+            {
+                data.bedroom && data.bathroom && data.toilet &&
+                <>
+                    <div>{data.bedroom} bedroom</div>
+                    <div>{data.bathroom} bathrooms</div>
+                    <div>{data.toilet} toilets</div>
+                </>
+            }
+
         </div>
     </div>
 

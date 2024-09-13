@@ -17,6 +17,7 @@ function AdminUpload() {
     const [monthly, setMonthly] = useState('');
     const [annum, setAnnum] = useState('');
     const [fileList, setFileList] = useState([]);
+    const [overview, setOverview] = useState('')
     const {dispatch} = UseContextData();
 
   //const imageparh
@@ -95,21 +96,21 @@ function AdminUpload() {
          placeholder='apartment qualities/Title' />
         <br/>
         
-        <input required 
+        <input  
         type='number'
         value={bedroom}
         onChange={(e)=>setBedroom(e.target.value)}
         placeholder='bedroom amount' />
         <br/>
         
-        <input required
+        <input
         type='number'
         value={bathroom}
         onChange={(e)=>setBathroom(e.target.value)}
         placeholder='bathroom amount' />
         <br/>
         
-        <input required
+        <input
         type='number'
         value={toilet}
         onChange={(e)=>setToilet(e.target.value)}
@@ -149,6 +150,16 @@ function AdminUpload() {
         value={annum}
         onChange={(e)=>setAnnum(e.target.value)}
         placeholder='price per annum in numbers' />
+        
+        <br/>
+        <label htmlFor='overview'>overview/summary</label>
+        <br/>
+        <textarea
+          value={overview} 
+          onChange={(e)=>setOverview(e.target.value)}
+          placeholder='type in overview brief summary of apartment not neccessary but neccessary for lounge and
+           bridal shower upload'
+        />
 
         <Upload.Dragger
         required

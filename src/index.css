@@ -252,7 +252,7 @@ nav{
     border-radius: 10px;
 }
 
-.registerForm input, #upload input{
+.registerForm input, #upload input, textarea{
     width: 100%;
     padding: 3px;
     border-radius:4px;

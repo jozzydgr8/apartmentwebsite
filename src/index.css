@@ -113,6 +113,16 @@ nav .container-fluid{
     font-size: 40px;
 
 }
+.montserrat, h1 {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    /* font-size: large;
+    margin: 15px 0px;
+    text-transform: capitalize;
+    color: var(--primary); */
+  }
 
 
 /* //special classes special lasee */

@@ -19,7 +19,7 @@ function AdminUpload() {
     const [fileList, setFileList] = useState([]);
     const [overview, setOverview] = useState('')
     const {dispatch} = UseContextData();
-    const {category, setCategory} = useState('apartment')
+    const [category, setCategory] = useState('apartment')
   //const imageparh
     // const imagePath = `data/${fileLis}`
 

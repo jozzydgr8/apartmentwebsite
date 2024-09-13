@@ -98,6 +98,9 @@ export const Amenities = ()=>{
                                 
     
                                 </main>
+
+
+                                
             </div>
         </section>
     )

@@ -2,7 +2,6 @@ import React from 'react'
 import {UseContextData} from '../ContextFolder/Context/UseContextData'
 import ListingTemp from '../component/ListingTemp';
 import { Link } from 'react-router-dom';
-import { Loading } from '../component/Loading';
 
 function Listings() {
      const {data} = UseContextData();

@@ -59,7 +59,7 @@ export const Amenities = ()=>{
                                                 <div className="categoryProductImage">
                                                 <img src={data.productImage} alt="pro" />
                                                 </div>
-                                                <div className="container">Games</div>
+                                                <div className="container">swimming</div>
                                                 
                                                 
                                             </Link>

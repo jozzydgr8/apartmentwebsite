@@ -69,15 +69,17 @@ function AdminUpload() {
         daily:daily,
         weekly:weekly,
         monthly:monthly,
-        annum:annum
+        annum:annum,
+        overview:overview
       };
       try{
         const filesData = await uploadFilesToStorage();
         formData.fileUrls = filesData
 
         const docRef = await addDoc(colRef, formData);
-        console.log('document written with id:', docRef.id)
-        dispatch({type:'loading', payload:false})
+        console.log('document written with id:', docRef.id);
+        window.location.href='/apartmentwebsite'
+        dispatch({type:'loading', payload:false});
       }catch(error){
         console.log(error)
         dispatch({type:'loading', payload:false})

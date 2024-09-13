@@ -78,7 +78,8 @@ function ListingTemp() {
                 <List data={temp} key={temp.id} length={temp.length} />
                 <div>
                     <div>
-                        <h1>{temp.apartment} is available for booking</h1>
+                        <h1>{temp.apartment} is currently {temp.available === true ? 'available':'unavailable'}</h1>
+                        <p>{temp.overview}</p>
                         
                             <button className={temp.available != true ? 'unavailablebutton':''} disabled={temp.available}>
                                 {temp.available === true ? ' Book now':' currently unavailable'}

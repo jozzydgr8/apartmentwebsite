@@ -10,7 +10,7 @@ function Header() {
             <h3 className='heading'>
               your home away from home
             </h3>
-            <p className='subHeading'>
+            <p className='subhead'>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, perspiciatis.
             </p>
           </div>

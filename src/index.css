@@ -21,9 +21,11 @@
     align-items: center;
   }
    .categoryProductImage img {
-    width: 100%;
+    width: 80%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
+    border-radius: 20px;
+    padding: 5px;
   }
   
   .categoryFlex {
@@ -72,11 +74,21 @@ button{
     border: solid 1px var(--tertiary);
     color: var(--tertiary);
 }
+h1{
+    color: var(--black);
+}
+.heading, h1{
+    font-size: 24px;
+}
 
 /* //special classes */
 
 section .container-fluid{
     padding: 5% 8%;
+}
+.subhead, h3{
+    font-size: 18px;
+    margin: 0;
 }
 nav .container-fluid{
     padding: 1% 8%;
@@ -156,11 +168,12 @@ nav{
 .listRow{
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(300px, 1fr));
-    grid-auto-rows: minmax(600px, auto);
+    grid-auto-rows: minmax(400px, auto);
     gap: 1.5rem;
     margin-top: 20px;
 
 }
+
 
 .list-grid{
     border: solid 1px var(--black);

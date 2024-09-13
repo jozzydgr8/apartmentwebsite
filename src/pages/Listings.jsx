@@ -6,6 +6,12 @@ import { Loading } from '../component/Loading';
 
 function Listings() {
      const {data} = UseContextData();
+     const features =  data && data.filter(item => item.category && item.category.toLowerCase() === 'apartment');
+    //  if(!features){
+    //     return(
+    //         <div>...ooops nothing to see here we will be back soon</div>
+    //     )
+    //  }
   return (
     <section>
         <div className='container-fluid'>
@@ -13,16 +19,19 @@ function Listings() {
         <h1 >
             Featured Listings
         </h1>
-        <h3>Enjoy the perfect gateway at a 5 star luxury
+        <p className='subhead'>Enjoy the perfect gateway at a 5 star luxury
             home away from home without the 5 star price
-        </h3>
+        </p>
+        {
+            features.length === 0 && <div>...ooops nothing to see here we will be back soon</div>
+        }
 
         <div className='listRow'>
             
                 {
-                    data && data.map((items)=>(
+                    features && features.map((items)=>(
                         <Link key={items.id} to={items.id}>
-                            <ListingTemp  data={items} length={data.length}/>
+                            <ListingTemp  data={items} length={features.length}/>
                         </Link>
                         
                     ))

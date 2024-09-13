@@ -3,22 +3,25 @@ import { UseContextData } from "../ContextFolder/Context/UseContextData"
 
 export const Amenities = ()=>{
     const {data} = UseContextData();
+    const lounge =  data && data.filter(item => item.apartment.toLowerCase() === 'lounge')
+    const swimming =  data && data.filter(item => item.apartment.toLowerCase() === 'swimming pool')
+    const bridal =  data && data.filter(item => item.apartment.toLowerCase() === 'bridal shower')
     return(
-        <section>
+        <section id='services'>
             <div className="container-fluid">
             <main className="categoryMain" >   
                                 <h1 className="montserrat">services</h1>
-                                <h3>Our Comprehensive services tailored to meet your needs</h3>                          
+                                <p className="subhead">Our Comprehensive services tailored to meet your needs</p>                          
                                 <div className='categoryFlex'>
-                                    <div className="category">{data && data
+                                    <div className="category">{lounge&& lounge
                                         .slice(0,1).map(data=>(
                                         <div key={data.id}>
-                                            <Link to={`/medical/${data.category}`} className="headerFlex categoryProduct ">
+                                            <Link to={`${data.id}`} className="headerFlex categoryProduct ">
                                                 <div className="categoryProductImage">
                                                     {
                                                         data.fileUrls && data.fileUrls.map((img, index)=>(
                                                             <img src={img.url} alt="pro" key={index} />
-                                                        ))
+                                                        ))[0]
                                                     }
                                                 
                                                 </div>
@@ -30,12 +33,16 @@ export const Amenities = ()=>{
                                     ))}</div>
     {/* 
                                     //second div */}
-                                <div className="category">{data && data
-                                        .slice(1,2).map(data=>(
+                                <div className="category">{bridal && bridal
+                                        .slice(0,1).map(data=>(
                                         <div key={data.id}>
-                                            <Link to={`/medical/${data.category}`} className="headerFlex categoryProduct ">
+                                            <Link to={`${data.id}`} className="headerFlex categoryProduct ">
                                                 <div className="categoryProductImage">
-                                                <img src={data.productImage} alt="pro" />
+                                                {
+                                                        data.fileUrls && data.fileUrls.map((img, index)=>(
+                                                            <img src={img.url} alt="pro" key={index} />
+                                                        ))[0]
+                                                }
                                                 </div>
     
     
@@ -52,12 +59,16 @@ export const Amenities = ()=>{
     {/* 
     second category */}
                                 <div className='categoryFlex'>
-                                    <div className="category">{data && data
+                                    <div className="category">{swimming && swimming
                                         .slice(0,1).map(data=>(
                                         <div key={data.id}>
-                                            <Link to={`/medical/${data.category}`} className="headerFlex categoryProduct ">
+                                            <Link to={`${data.id}`} className="headerFlex categoryProduct ">
                                                 <div className="categoryProductImage">
-                                                <img src={data.productImage} alt="pro" />
+                                                {
+                                                        data.fileUrls && data.fileUrls.map((img, index)=>(
+                                                            <img src={img.url} alt="pro" key={index} />
+                                                        ))[0]
+                                                }
                                                 </div>
                                                 <div className="container">swimming</div>
                                                 
@@ -70,9 +81,9 @@ export const Amenities = ()=>{
                                 <div className="category">{data && data
                                         .slice(0,1).map(data=>(
                                         <div key={data.id}>
-                                            <Link to={`/medical/${data.category}`} className="headerFlex categoryProduct ">
+                                            <Link to={`flawless`} className="headerFlex categoryProduct ">
                                                 <div className="categoryProductImage">
-                                                <img src={data.productImage} alt="pro" />
+                                                {/* <img src={data.productImage} alt="pro" /> */}
                                                 </div>
     
     

@@ -19,7 +19,7 @@ function AdminUpload() {
     const [fileList, setFileList] = useState([]);
     const [overview, setOverview] = useState('')
     const {dispatch} = UseContextData();
-
+    const {category, setCategory} = useState('apartment')
   //const imageparh
     // const imagePath = `data/${fileLis}`
 
@@ -70,7 +70,9 @@ function AdminUpload() {
         weekly:weekly,
         monthly:monthly,
         annum:annum,
-        overview:overview
+        overview:overview,
+        available:true,
+        category:category
       };
       try{
         const filesData = await uploadFilesToStorage();
@@ -154,8 +156,19 @@ function AdminUpload() {
         placeholder='price per annum in numbers' />
         
         <br/>
+        <select name = 'category' value={category} onChange={e => setCategory(e.target.value)} required >
+                  <option  disabled >select category</option>
+                  <option value={'apartment'}>apartment</option>
+                  <option value={'lounge'}>lounge</option>
+                  <option value={'swimming pool'}>swimming pool</option>
+                  <option value={'club'}>club</option>
+                  <option value={'hall'}>hall</option>
+                  <option value={'bridal shower'}>bridal shower</option>
+        </select>
+              <br />
         <label htmlFor='overview'>overview/summary</label>
         <br/>
+
         <textarea
           value={overview} 
           onChange={(e)=>setOverview(e.target.value)}

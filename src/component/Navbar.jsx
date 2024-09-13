@@ -56,7 +56,7 @@ function Navbar({onOpen}) {
         }
 
         <li className='nav-item'>
-          <Link className='nav-link' to={'/'}>visit our bakery</Link>
+          <a className='nav-link' href={'/apartmentwebsite/#services'}>services</a>
         </li>
       </ul>
     </div>

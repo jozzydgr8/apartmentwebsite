@@ -9,8 +9,8 @@ export const AvailFilter= ()=>{
             <div className='availSectiondiv container-fluid'>
                 
                 <form>
-                    <div>
-                        <p>what are you looking for</p>
+                    <div style={{ width:'100%'}} >
+                        what are you looking for
                         <Select 
                         style={{width:'100%'}}
                         mode="multiple"
@@ -23,9 +23,9 @@ export const AvailFilter= ()=>{
                                 ))
                             }
                         </Select>
-
+                        <button style={{margin:'7px 0'}}>check availability</button>
                     </div>
-                    <div><button>check availability</button></div>
+                    
                 </form>
             </div>
         </section>

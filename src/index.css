@@ -6,6 +6,7 @@
 :root{
     --primary: hsl(0, 3%, 93%);
     --black: #FF5900;
+    --tertiary: rgb(0, 0, 0, 0.5);
     
 
 }
@@ -21,6 +22,10 @@ button{
     padding: 5px;
     border-radius: 3px;
     margin: 4px 0;
+}
+.unavailablebutton{
+    border: solid 1px var(--tertiary);
+    color: var(--tertiary);
 }
 
 /* //special classes */
@@ -106,7 +111,7 @@ nav{
 .listRow{
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(300px, 1fr));
-    grid-auto-rows: minmax(200px, auto);
+    grid-auto-rows: minmax(600px, auto);
     gap: 1.5rem;
     margin-top: 20px;
 
@@ -125,6 +130,19 @@ nav{
     color: var(--black);
     
 }
+.unavailable{
+    border: solid 1px var(--tertiary);
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+    border-radius: 10px 10px 0px 0px;
+    color: var(--tertiary);
+  }
+
 
 .gridProduct{
     overflow: hidden;
@@ -160,7 +178,13 @@ nav{
     justify-content: space-between;
     background: var(--black); 
 }
-.list-footer div{
+.unavailablefooter{
+    display: flex;
+    justify-content: space-between;
+    background: var(--tertiary); 
+}
+
+.list-footer div, .unavailablefooter div{
     border-right: solid 1px var(--primary);
     color: var(--primary);
     padding:  2% 3%;
@@ -266,5 +290,9 @@ nav{
   }
   @keyframes l13{ 
     100%{transform: rotate(1turn)}
+  }
+
+  .available{
+
   }
 

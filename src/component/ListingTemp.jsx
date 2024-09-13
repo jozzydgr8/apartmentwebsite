@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import DisplayImage from './DisplayImage'
-import { UseContextAuth } from '../ContextFolder/Context/UseContextAuth'
-import { colRef, storage } from '../App';
-import { deleteObject, ref } from 'firebase/storage';
-import { deleteDoc, doc } from 'firebase/firestore';
+
 
 function ListingTemp({data,length}) {
 if(!data){
@@ -18,7 +15,7 @@ data.fileUrls && data.fileUrls.map((img)=>(
 const urlPath = data.fileUrls && data.fileUrls.map((img)=>(
     img.imagePath
 ))
-console.log(urlPath)
+
 
 
     // !data.available ? <span> booked </span> : <span>Available</span>
@@ -29,7 +26,7 @@ console.log(urlPath)
   return (
     <>
     
-    <div className='list-grid'>
+    <div className={data.available === true ? 'list-grid': 'unavailable'}>
         
         <div className='gridProduct '>
 
@@ -48,14 +45,16 @@ console.log(urlPath)
             ₦{data.daily}
             </h3>
             
-            <button>available</button>
+            <button className={data.available != true ? 'unavailablebutton':''}>
+                {data.available === true ? 'available':'currently unavailable'}
+            </button>
         </div>
 
         </div>
 
 
 
-        <div className='list-footer'>
+        <div className={data.available === true ? 'list-footer': 'unavailablefooter'}>
         <div>{data.bedroom} bedroom</div>
         <div>{data.bathroom} bathrooms</div>
         <div>{data.toilet} toilets</div>

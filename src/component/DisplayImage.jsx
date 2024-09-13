@@ -1,8 +1,6 @@
 import React from 'react'
 
 function DisplayImage({url, length}) {
-  console.log(url)
-  console.log(length)
   if (length != 1 && length != undefined){
     return (
       <>

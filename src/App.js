@@ -16,6 +16,8 @@ import { UseContextAuth } from './ContextFolder/Context/UseContextAuth';
 import { Register } from './User/Register';
 import ListingTemp from './ID/ListingTemp';
 import { Loading } from './component/Loading';
+import { ForgotPassword } from './User/ForgotPassword';
+import User from './User/User';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -114,9 +116,13 @@ function App() {
       <>
       <Route path='apartmentwebsite' element={<Layout/>}>
         <Route index element={<Home/>} />
-        <Route path='register' element={!user ? <Register/>:<Navigate to={'/apartmentwebsite'}/>} />
+        <Route path='register' element={<User/>} >
+        <Route index element={!user ? <Register/>:<Navigate to={'/apartmentwebsite'}/>}/>
+        <Route path='forgotpassword' element={<ForgotPassword/>}/>
+        </Route>
         <Route path='upload' element={user && user.uid === process.env.REACT_APP_superAdmin ? <AdminUpload/>: <Navigate to={'/apartmentwebsite'}/>}/>
         <Route path=':id' element={<ListingTemp/>} />
+        
       </Route>
       </>
     ))

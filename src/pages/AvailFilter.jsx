@@ -7,6 +7,7 @@ export const AvailFilter= ()=>{
     return(
         <section className="availSection">
             <div className='availSectiondiv container-fluid'>
+                
                 <form>
                     <div>
                         <p>what are you looking for</p>
